@@ -15,6 +15,11 @@ class Inbox {
 
     void add_email(Email email);
     void remove_email();
-    void get_unread();
+  
     int get_size();
+    std::vector<Email> get_unread();
+    std::vector<Email> get_read();
+    std::vector<Email> get_pinned();
+    std::vector<Email> get_flagged();
+    std::vector<Email> get_emails_from(Address address);
 };

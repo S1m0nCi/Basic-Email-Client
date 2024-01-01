@@ -11,6 +11,14 @@ Email::~Email() {
   std::cout<< "Email instance deleted";
 };
 
+Address Email::get_sender() {
+  return Email::sender;
+}
+
+Address Email::get_recipient() {
+  return Email::recipient;
+}
+
 void Email::set_read(bool is_read) {
   Email::read = is_read;
 }

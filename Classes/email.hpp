@@ -41,6 +41,8 @@ class Email {
     bool get_flag();
     void set_pin(bool is_pinned);
     bool get_pin();
+    Address get_sender();
+    Address get_recipient();
 
     Email quick_reply(std::string email_content); // a recipient function
     Email forward(Address forward_address);
