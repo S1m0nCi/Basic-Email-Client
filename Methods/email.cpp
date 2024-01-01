@@ -11,28 +11,28 @@ Email::~Email() {
   std::cout<< "Email instance deleted";
 };
 
-void Email::mark_read() {
-  Email::read = true;
+void Email::set_read(bool is_read) {
+  Email::read = is_read;
 }
 
-void Email::mark_unread() {
-  Email::read = false;
+bool Email::get_read() {
+  return Email::read;
 }
 
-void Email::add_flag() {
-  Email::flag = true;
+void Email::set_flag(bool is_flagged) {
+  Email::flag = is_flagged;
 }
 
-void Email::remove_flag() {
-  Email::flag = false;
+bool Email::get_flag() {
+  return Email::flag;
 }
 
-void Email::add_pin() {
-  Email::pin = true;
+void Email::set_pin(bool is_pinned) {
+  Email::pin = is_pinned;
 }
 
-void Email::remove_pin() {
-  Email::pin = false;
+bool Email::get_pin() {
+  return Email::pin;
 }
 
 Email Email::quick_reply ( std::string email_content ) {
@@ -41,3 +41,12 @@ Email Email::quick_reply ( std::string email_content ) {
   return Email( Email::recipient, Email::sender, email_content );
 }
 
+Email Email::forward ( Address forward_address) {
+  Email forward_email =  Email( Email::recipient, forward_address, Email::content);
+  forward_email.original_sender = Email::sender;
+  return forward_email;
+}
+
+void Email::recall() {
+  Email::~Email();
+}
