@@ -1,8 +1,9 @@
-#include "inbox.hpp"
-#include "address.hpp"
 #include <string>
 #include <vector>
 #include <iostream>
+
+#include "inbox.hpp"
+#include "address.hpp"
 
 Inbox::Inbox (Address inbox_owner, std::vector<Email> email_list) 
   : owner(inbox_owner), emails(email_list) {}

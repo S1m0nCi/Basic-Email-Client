@@ -1,5 +1,5 @@
-#include "address.hpp"
 #include <iostream>
+#include "address.hpp"
 #include "alias.hpp"
 
 Address::Address(std::string address_name)

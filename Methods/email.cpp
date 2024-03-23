@@ -1,6 +1,7 @@
-#include "email.hpp"
 #include <iostream>
 #include <string>
+#include "email.hpp"
+include "address.hpp"
 
 Email::Email(Address sender_address,
   Address recipient_address,
@@ -10,6 +11,18 @@ Email::Email(Address sender_address,
 Email::~Email() {
   std::cout<< "Email instance deleted";
 };
+
+void Email::set_subject(std::string subject_text) {
+  Email::subject = subject_text;
+}
+
+void Email::set_cc(Address cc_address) {
+  Email::cc = cc_address;
+}
+
+void Email::set_bcc(Address bcc_address) {
+  Email::bcc = bcc_address;
+}
 
 Address Email::get_sender() {
   return Email::sender;
